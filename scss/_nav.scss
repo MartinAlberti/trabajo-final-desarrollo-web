@@ -1,0 +1,31 @@
+.navbar {
+    color: #18365c;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    background-color: $nav-color;
+    padding-right: 3%;
+
+
+    .navbar-brand {
+        font-weight: 600;
+        padding-left: 2%;
+    }
+
+    .logo1:hover {
+        transform: scale(1.03);
+    }
+
+    .navbar-nav {
+        @extend .navbar;
+
+    }
+
+    .nav-item {
+        padding-left: 40px;
+        text-transform: uppercase;
+    }
+
+    a:hover {
+        font-weight: bold;
+    }
+}

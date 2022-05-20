@@ -1,0 +1,54 @@
+.grillaProductos {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "contenido"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto 80px;
+    height: auto;
+}
+
+nav {
+    grid-area: nav;
+}
+
+#fotosProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 7% 5% 40px 5%;
+    grid-area: contenido;
+
+    .foto {
+        margin-bottom: 40px;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        p {
+            text-align: center;
+            background-color: mintcream;
+            margin: 0;
+
+            .bi-cart-plus {
+                color: rgb(48, 48, 48);
+
+                &:hover {
+                    color: green;
+                }
+            }
+        }
+    }
+
+    .tejido {
+
+        width: 289px;
+        height: 385px;
+    }
+}
+
+footer {
+    grid-area: footer;
+}

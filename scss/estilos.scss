@@ -1,0 +1,345 @@
+@import "general";
+@import "nav";
+@import "footer";
+@import "index";
+@import "productos";
+
+// MAPA
+
+$redes:(facebook:#3a5795,
+    instagram:#c25e30);
+
+@each $red,
+$color in $redes {
+
+    .bi-#{$red} {
+        color: $color;
+    }
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+
+/* NOSOTROS */
+.grillaNosotros {
+    display: grid;
+    grid-template-areas:
+        "nav       nav     nav"
+        "contenido none    fotos"
+        "footer    footer   footer";
+    grid-template-columns: 2fr 0.5fr 1fr;
+    grid-template-rows: 80px auto 80px;
+    height: 100vh;
+}
+
+nav {
+    grid-area: nav;
+}
+
+.nosotrosTexto {
+    grid-area: contenido;
+    margin: 10% 5% 5% 10%;
+
+    p {
+        margin-bottom: 5%;
+        text-indent: 3%;
+    }
+}
+
+.nosotrosFotos {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: fotos;
+    margin-top: 20%;
+
+    .fotoNosotros {
+        height: 400px;
+        width: 300px;
+        margin-bottom: 3%;
+        border-radius: 2%;
+    }
+
+
+}
+
+
+footer {
+    grid-area: footer;
+
+}
+
+
+
+
+// ENVIOS
+
+.grillaEnvios {
+    display: grid;
+    grid-template-areas:
+        "nav            nav"
+        "contenido      correo"
+        "mapa           pagos"
+        "footer         footer";
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 80px auto auto 80px;
+    height: 100vh;
+}
+
+nav {
+    grid-area: nav;
+}
+
+section.enviosText {
+    grid-area: contenido;
+    text-align: left;
+    margin: 100px 5% 0 30%;
+
+    .bi {
+        color: rgb(111, 111, 235);
+        margin-right: 10px;
+    }
+}
+
+.mapa {
+    grid-area: mapa;
+    @include flex-row;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+
+
+
+    .mapaImg {
+        width: 632px;
+        height: 328px;
+    }
+}
+
+.enviosImagen {
+    grid-area: correo;
+    @include flex-row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+
+    .correo {
+        height: 59px;
+        width: 240px;
+        margin-top: 120px;
+    }
+}
+
+.tarjetasImagen {
+    grid-area: pagos;
+    justify-content: center;
+    display: flex;
+
+    .pagos {
+        height: 33px;
+        width: 270px;
+        margin: auto 0 10px 0;
+    }
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* CONTACTO */
+
+
+.grillaContacto {
+    display: grid;
+    grid-template-areas:
+        "nav        nav"
+        "contacto  info"
+        "footer     footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px auto 80px;
+    height: 100vh;
+}
+
+nav {
+    grid-area: nav;
+}
+
+.containerContacto {
+    grid-area: contacto;
+    margin-left: 5%;
+
+    .textoContacto {
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        font-size: xx-large;
+    }
+}
+
+
+.infoContacto {
+    grid-area: info;
+    margin-top: 350px;
+    margin-left: 40%;
+    text-align: left;
+
+    li {
+        margin-bottom: 10px;
+
+        .bi {
+            margin-right: 10px;
+        }
+
+        .bi-whatsapp {
+            color: #25D366;
+        }
+    }
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    //    NOSOTROS
+
+    .grillaNosotros {
+        display: grid;
+        grid-template-areas:
+            "nav"
+            "contenido"
+            "fotos"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto auto 80px;
+        height: 100vh;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    .nosotrosTexto {
+        grid-area: contenido;
+        margin: 5% 5% 0 5%;
+        text-align: center;
+    }
+
+    .nosotrosFotos {
+        grid-area: fotos;
+        justify-content: center;
+
+        .fotoNosotros {
+            margin: 5%;
+        }
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+
+    //  ENVIOS
+
+    .grillaEnvios {
+        display: grid;
+        grid-template-areas:
+            "nav"
+            "contenido"
+            "mapa"
+            "correo"
+            "pagos"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto auto auto auto 80px;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    section.enviosText {
+
+        grid-area: contenido;
+        text-align: center;
+        margin: 10% 0 5% 5%;
+    }
+
+    .mapa {
+        grid-area: mapa;
+        justify-content: center;
+        margin: 0;
+
+        .mapaImg {
+            width: 356px;
+            height: 185px;
+        }
+    }
+
+    .enviosImagen {
+        grid-area: correo;
+        justify-content: center;
+        margin-bottom: 1%;
+
+        .correo {
+            height: 45px;
+            width: 180px;
+            margin: 5% 0 5% 0;
+        }
+
+    }
+
+    .tarjetasImagen {
+        grid-area: pagos;
+        margin: 0;
+    }
+
+
+    footer {
+        grid-area: footer;
+    }
+
+
+    //   CONTACTO
+
+    .grillaContacto {
+        display: grid;
+        grid-template-areas:
+            "nav"
+            "contacto"
+            "info"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto auto 80px;
+        height: auto;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    .containerContacto {
+        grid-area: contacto;
+    }
+
+
+
+    .infoContacto {
+        grid-area: info;
+        margin-top: 10%;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
